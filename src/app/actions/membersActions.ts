@@ -12,7 +12,7 @@ export async function getMembers(){
     if(!session?.user) return null
 
     try {
-       
+    
         return prisma.member.findMany({
             where:{
                 NOT:{
