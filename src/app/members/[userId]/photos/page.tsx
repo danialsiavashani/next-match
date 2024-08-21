@@ -17,8 +17,8 @@ export default async function page({ params }: { params: { userId: string } }) {
               return (
                 <div key={photo.id}>
                   <Image
-                    width={200}
-                    height={200}
+                    width={220}
+                    height={220}
                     src={photo.url}
                     alt="Image of member"
                     className="object-cover aspect-square"

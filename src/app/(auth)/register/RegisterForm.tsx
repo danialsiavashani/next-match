@@ -8,6 +8,7 @@ import { GiPadlock } from 'react-icons/gi';
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import ShowPassword from '@/components/form/ShowPassword';
+import { handelFormServerErrors } from '@/lib/util';
 
 export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,14 +27,7 @@ export default function RegisterForm() {
     if (result.status === 'success') {
       console.log('User was created successfully');
     } else {
-      if (Array.isArray(result.error)) {
-        result.error.forEach((e) => {
-          const fieldName = e.path.join('.') as 'email' | 'name' | 'password';
-          setError(fieldName, { message: e.message });
-        });
-      } else {
-        setError('root.serverError', { message: result.error });
-      }
+      handelFormServerErrors(result, setError);
     }
   };
   return (

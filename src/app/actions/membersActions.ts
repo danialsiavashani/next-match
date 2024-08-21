@@ -53,3 +53,6 @@ export async function getMemberPhotosByUserId(userId: string) {
   
     return member.photos.map((p) => p) as Photo[];
   }
+
+
+  

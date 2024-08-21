@@ -5,6 +5,6 @@ type Props = {
   
   export const links: Props[] = [
     { href: '/', label: 'home' },
-    { href: '/favorites ', label: 'edit profile' },
+    { href: '/members/edit ', label: 'edit profile' },
 
   ];
